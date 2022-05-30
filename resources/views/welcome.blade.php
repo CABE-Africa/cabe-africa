@@ -17,6 +17,7 @@
         recusandae unde, doloremque nihil! Dolores deleniti quos nemo et, natus rem laboriosam molestias saepe similique
         earum! Maxime iste nisi doloremque aperiam voluptatum cupiditate laudantium eius explicabo et aliquam ducimus
         adipisci repudiandae, esse hic optio harum quas!</p>
+        
     <script src="{{ mix("js/app.js") }}"></script>
 </body>
 
