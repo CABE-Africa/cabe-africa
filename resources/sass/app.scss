@@ -6,6 +6,14 @@
 // 2. Include any default variable overrides here
 $primary: #40af4b;
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1280px,
+  xxl: 1440px
+);
+
 // 3. Include remainder of required Bootstrap stylesheets
 @import "~bootstrap/scss/variables";
 
@@ -25,9 +33,17 @@ $primary: #40af4b;
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/helpers";
 @import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/transitions";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
 @import "utilities";
+
+// Add a customize font awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
