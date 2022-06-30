@@ -1,17 +1,21 @@
 @import "variables";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "~bootstrap/scss/functions";
 
+$font-family-base: 'Roboto', sans-serif;
+$body-bg: #f4f4f4;
+
 // 2. Include any default variable overrides here
-$primary: #40af4b;
+$primary: #008b46;
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1280px,
-  xxl: 1440px
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1280px,
+    xxl: 1440px,
 );
 
 // 3. Include remainder of required Bootstrap stylesheets
@@ -20,8 +24,8 @@ $container-max-widths: (
 // 4. Include any default map overrides here
 
 $custom-colors: (
-  "light-gray": #C2D6C6,
-  "light-green": #D8E0BF
+    "light-gray": #c2d6c6,
+    "light-green": #d8e0bf,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -45,6 +49,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "~bootstrap/scss/card";
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/dropdown";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";

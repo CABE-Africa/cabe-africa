@@ -18,7 +18,7 @@
             <div class="bg-primary">
                 <div class="container">
                     <div class="d-flex gap-3 justify-content-md-between">
-                        <div class="d-flex gap-3 p-2 p-md-3">
+                        <div class="d-flex gap-3 p-2">
                             <a href="#" class="text-white text-decoration-none d-inline-flex gap-2 align-items-center">
                                 <i class="fa-solid fa-phone"></i>
                                 <span class="d-none d-sm-inline">+254714097380</span>
@@ -47,14 +47,46 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="global-navigation-menu">
-                        <ul class="navbar-nav me-md-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Who We Are</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">What We Do</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">News and Publications</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Resources</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Blogs</a></li>
+                        <ul class="navbar-nav me-md-auto mb-2 mb-lg-0 text-uppercase">
+                            <li class="nav-item dropdown">
+                                <a href="#" id="who-we-are-dropdown-toggler" class="nav-link text-uppercase dropdown-toggle"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">Who We Are</a>
+                                <ul class="dropdown-menu py-0" aria-labelledby="who-we-are-dropdown-toggler">
+                                    <li><a href="#" class="dropdown-item text-muted">About Us</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">Where We Work</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">Our Team</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" id="what-we-do-dropdown-toggler" class="nav-link text-uppercase dropdown-toggle"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">What We Do</a>
+                                <ul class="dropdown-menu py-0" aria-labelledby="what-we-do-dropdown-toggler">
+                                    <li><a href="#" class="dropdown-item text-muted">Programs</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">Projects</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">Consultancies</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" id="publications-dropdown-toggler" class="nav-link text-uppercase dropdown-toggle"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">Publications</a>
+                                <ul class="dropdown-menu py-0" aria-labelledby="publications-dropdown-toggler">
+                                    <li><a href="#" class="dropdown-item text-muted">Press Release</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">Events</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">News</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">Blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" id="resources-dropdown-toggler" class="nav-link text-uppercase dropdown-toggle"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                                <ul class="dropdown-menu py-0" aria-labelledby="resources-dropdown-toggler">
+                                    <li><a href="#" class="dropdown-item text-muted">Reports</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">Gallery</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">Audio</a></li>
+                                    <li><a href="#" class="dropdown-item text-muted">Videos</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a href="#" class="nav-link text-uppercase">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
