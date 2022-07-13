@@ -56,6 +56,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/alert";
 
 // Utilities tweaks
 

@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Sign In')
+@section('title', 'Request Password')
 
 @section('body')
 <div class="row g-0 min-vh-100">
@@ -19,9 +19,9 @@
     </div>
     <div class="col-md-6 d-flex justify-content-center align-items-center">
         <div class="w-75 w-md-50">
-            <h1>Sign In</h1>
+            <h1>Forgot Password</h1>
             <x-feedback />
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ route('password.email') }}" method="POST">
                 @csrf
                 <div class="">
                     <label for="email" class="form-label">Email</label>
@@ -34,26 +34,19 @@
                         </span>
                     @enderror
                 </div>
-                <div class="mt-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" 
-                        class="form-control @error('password') is-invalid @enderror"
-                        autocomplete="current-password">
-                    @error('password')
-                        <span class="invalid-feedback">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <div class="mt-3"><a href="{{ route('password.request') }}">Forgot password?</a></div>
                 <div class="mt-4">
-                    <button type="submit" class="btn btn-primary text-white w-100 rounded-pill">Sign In</button>
+                    <button type="submit" class="btn btn-primary text-white w-100 rounded-pill">Request Reset Link</button>
                 </div>
 
                 <hr class="my-4">
 
                 @if (Route::has('register'))
-                    <div class="d-flex flex-wrap gap-2 justify-content-md-center"><span>Don't have an account?</span><a href="{{ route('register') }}" class="">Sign Up</a></div>
+                    <div>
+                        <a href="{{ route('register') }}" class="d-flex flex-wrap gap-2 align-items-center text-decoration-none">
+                            <i class="fa-solid fa-arrow-left-long"></i>
+                            <span>Back to login</span>
+                        </a>
+                    </div>
                 @endif
             </form>
         </div>

@@ -46,9 +46,17 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
 
-        // Registration of authentication views
+        // Authentication Views
+
         Fortify::registerView(fn() => view('authentication.register'));
         
         Fortify::loginView(fn() => view('authentication.login'));
+
+        Fortify::requestPasswordResetLinkView(fn() => view('authentication.passwords.request'));
+
+        Fortify::resetPasswordView(fn(Request $request) => view('authentication.passwords.reset', [
+            'email' => $request->get('email'),
+            'token' => $request->route('token')
+        ]));
     }
 }

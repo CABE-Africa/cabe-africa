@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Sign In')
+@section('title', 'Reset Password')
 
 @section('body')
 <div class="row g-0 min-vh-100">
@@ -19,15 +19,16 @@
     </div>
     <div class="col-md-6 d-flex justify-content-center align-items-center">
         <div class="w-75 w-md-50">
-            <h1>Sign In</h1>
+            <h1>Reset Password</h1>
             <x-feedback />
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ route('password.update') }}" method="POST">
                 @csrf
+                <input type="hidden" name="token" value="{{ $token }}">
                 <div class="">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" name="email" id="email"
                         class="form-control @error('email') is-invalid @enderror"
-                        autocomplete="email" value="{{ old('email') }}">
+                        autocomplete="email" value="{{ $email ?? old('email') }}">
                     @error('email')
                         <span class="invalid-feedback">
                             <strong>{{ $message }}</strong>
@@ -45,16 +46,20 @@
                         </span>
                     @enderror
                 </div>
-                <div class="mt-3"><a href="{{ route('password.request') }}">Forgot password?</a></div>
+                <div class="mt-3">
+                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <input type="password" name="password_confirmation" id="confirm-password" 
+                        class="form-control @error('confirm_password') is-invalid @enderror"
+                        autocomplete="current-password">
+                    @error('confirm_password')
+                        <span class="invalid-feedback">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>                
                 <div class="mt-4">
-                    <button type="submit" class="btn btn-primary text-white w-100 rounded-pill">Sign In</button>
+                    <button type="submit" class="btn btn-primary text-white w-100 rounded-pill">Reset Password</button>
                 </div>
-
-                <hr class="my-4">
-
-                @if (Route::has('register'))
-                    <div class="d-flex flex-wrap gap-2 justify-content-md-center"><span>Don't have an account?</span><a href="{{ route('register') }}" class="">Sign Up</a></div>
-                @endif
             </form>
         </div>
     </div>
