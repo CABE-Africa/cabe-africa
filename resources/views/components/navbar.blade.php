@@ -10,9 +10,9 @@
         <div class="collapse navbar-collapse" id="global-navigation-menu">
             <ul class="navbar-nav me-md-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                    <a href="#" id="who-we-are-dropdown-toggler" class="nav-link"
+                    <a href="#" id="who-we-are-dropdown-toggler" class="nav-link d-flex gap-1 align-items-top custom-dropdown-toggle"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">Who We Are</a>
-                    <ul class="dropdown-menu py-0" aria-labelledby="who-we-are-dropdown-toggler">
+                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="who-we-are-dropdown-toggler">
                         <li><a href="#" class="dropdown-item text-muted">About Us</a></li>
                         <li><a href="#" class="dropdown-item text-muted">Where We Work</a></li>
                         <li><a href="#" class="dropdown-item text-muted">Our Team</a></li>
@@ -51,7 +51,7 @@
             </ul>
             <div class="d-flex">
                 @if (Route::has('login'))
-                    <a href="{{ route('login') }}" class="btn btn-lg btn-outline-primary rounded-pill">My Account</a>
+                    <a href="{{ route('login') }}" class="btn btn-outline-primary px-4 py-2 rounded-pill">My Account</a>
                 @endif
             </div>
         </div>
