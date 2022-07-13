@@ -77,7 +77,6 @@
                         </span>
                     @enderror
                 </div>
-                <div class="mt-3"><a href="#">Forgot password?</a></div>
                 <div class="mt-4">
                     <button type="submit" class="btn btn-primary text-white w-100 rounded-pill">Sign Up</button>
                 </div>
