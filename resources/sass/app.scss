@@ -8,7 +8,7 @@
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "~bootstrap/scss/functions";
 
-$font-family-base: 'Roboto', sans-serif;
+$font-family-base: "Roboto", sans-serif;
 $body-bg: #f4f4f4;
 
 // 2. Include any default variable overrides here
@@ -56,6 +56,21 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/forms";
+
+// Utilities tweaks
+
+$utilities: map-merge(
+    $utilities, (
+      "border": map-merge(
+        map-get($utilities, "border"),
+        ( responsive: true ),
+      ),
+      "width": map-merge(
+        map-get($utilities, "width"),
+        ( responsive: true ),
+      ),
+    )
+);
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";
