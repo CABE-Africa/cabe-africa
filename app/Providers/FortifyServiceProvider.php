@@ -58,5 +58,7 @@ class FortifyServiceProvider extends ServiceProvider
             'email' => $request->get('email'),
             'token' => $request->route('token')
         ]));
+
+        Fortify::verifyEmailView(fn() => view('authentication.verify'));
     }
 }

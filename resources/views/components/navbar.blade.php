@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light">
+<nav class="navbar navbar-expand-md navbar-light bg-white">
     <div class="container">
         <a href="{{ route("welcome") }}" class="navbar-brand">
             <img height="48" src="{{ asset('images/logo.png') }}" alt="CABE Africa">
@@ -49,11 +49,48 @@
                 </li>
                 <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
             </ul>
+            @auth
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <span class="d-inline-flex align-items-center gap-2">
+                            <span>{{ auth()->user()->name }}</span>
+                            <i class="fa-solid fa-xl fa-user"></i>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        @if (str()->is(auth()->user()->email, 'azenga@cabe-africa.org'))
+                        <li>
+                            <a href="{{ route('dashboard') }}" class="dropdown-item text-muted d-flex gap-2 align-items-center">
+                                <i class="fa-solid fa-1x fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        @endif
+                        @if (!request()->routeIs('home'))
+                        <li>
+                            <a href="{{ route('home') }}" class="dropdown-item text-muted d-flex gap-2 align-items-center">
+                                <i class="fa-solid fa-1x fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        @endif
+                        <li>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#logout-modal" class="dropdown-item text-muted d-flex gap-2 align-items-center">
+                                <i class="fa-solid fa-1x fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </button>
+                        </li>
+                    </ul>
+                </li>                
+            </ul>
+            @else
             <div class="d-flex">
                 @if (Route::has('login'))
                     <a href="{{ route('login') }}" class="btn btn-outline-primary px-4 py-2 rounded-pill">My Account</a>
                 @endif
             </div>
+            @endauth
         </div>
     </div>
 </nav>
